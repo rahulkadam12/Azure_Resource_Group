@@ -1,0 +1,15 @@
+---
+- name: Create a New Azure Resource Group
+  delegate_to: localhost
+  azure_rm_resourcegroup:
+      name: "{{ RG_Name }}"
+      location: "{{ Location }}"
+      tags:
+          Association: "{{ Association }}"
+          BusinessOwner: "{{ BusinessOwner }}"
+          BusinessOwnerSignInName: "{{ BusinessOwnerSignInName }}"
+          CostCenter: "{{ CostCenter }}"
+          TechnicalOwner: "{{ TechnicalOwner }}"
+          TechnicalOwnerSignInName: "{{ TechnicalOwnerSignInName }}"     
+          TechnicalExpert: "{{ TechnicalExpert }}"
+          TechnicalExpertSignInName: "{{ TechnicalExpertSignInName }}"
