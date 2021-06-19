@@ -5,25 +5,25 @@
 
 - name: "Importing Dev Subscriptions variables"
   include_vars: roles/AzureResourceGroup/vars/variables_dev.yaml
-  when: Subscription_Name == "TetraPakAzure_Dev"
+  when: Subscription_Name == "Azure_Dev"
 
 - name: "Importing Test Subscriptions variables"
   include_vars: roles/AzureResourceGroup/vars/variables_test.yaml
-  when: Subscription_Name == "TetraPakAzure_Test"
+  when: Subscription_Name == "Azure_Test"
 
 - name: "Importing Prod Subscriptions variables"
   include_vars: roles/AzureResourceGroup/vars/variables_prod.yaml
-  when: Subscription_Name == "TetraPakAzure_Prod"
+  when: Subscription_Name == "Azure_Prod"
 
-- name: "Importing TLIAzure Subscriptions variables"
-  include_vars: roles/AzureResourceGroup/vars/variables_TLIAzure.yaml
-  when: Subscription_Name == "TLIAzure"
+- name: "Importing Azure Subscriptions variables"
+  include_vars: roles/AzureResourceGroup/vars/variables_Azure.yaml
+  when: Subscription_Name == "Azure"
 
 - import_tasks: Create_ResoureGroup.yaml
 
 - name: "Importing Contributor-TetraPak Role variables"
-  include_vars: roles/AzureResourceGroup/vars/Contributor-TetraPak.yaml
-  when: Role_Name == "Contributor-TetraPak"
+  include_vars: roles/AzureResourceGroup/vars/Contributor.yaml
+  when: Role_Name == "Contributor"
   
 #- name: "Importing Owner Role variables"
 #  include_vars: roles/AzureResourceGroup/vars/owner.yaml
