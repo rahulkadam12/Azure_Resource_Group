@@ -1,8 +1,12 @@
-- name: Create a resource group
-  delegate_to: localhost
-  azure_rm_resourcegroup:
-    name: myResourceGroup
-    location: westus
-    tags:
-        testing: testing
-        delete: never
+---
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: Create resource group
+      azure_rm_resourcegroup:
+        name: ansible-rg
+        location: eastus
+      register: rg
+    - debug:
+        var: rg
