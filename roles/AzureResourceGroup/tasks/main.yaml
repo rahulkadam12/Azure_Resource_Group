@@ -1,3 +1,12 @@
 ---
-- import_tasks: Create_ResoureGroup.yaml
+- name: Create a New Azure Resource Group
+  hosts: localhost
+  collections:
+    - azure.azcollection
+  tasks:
+    - azure_rm_resourcegroup:
+        name: myResourceGroup
+        location: east-us
+        tags:
+            testing: testing
 
