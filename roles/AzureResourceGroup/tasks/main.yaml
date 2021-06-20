@@ -1,4 +1,5 @@
 - name: Create a resource group
+  delegate_to: localhost
   azure_rm_resourcegroup:
     name: myResourceGroup
     location: westus
