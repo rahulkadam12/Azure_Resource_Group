@@ -1,8 +1,11 @@
 ---
 - name: Create a New Azure Resource Group
-  delegate_to: localhost
-  azure_rm_resourcegroup:
-      name: myResourceGroup
-      location: east-us
-      tags:
-          testing: testing
+  hosts: localhost
+  collections:
+    - azure.azcollection
+  tasks:
+    - azure_rm_resourcegroup:
+        name: myResourceGroup
+        location: east-us
+        tags:
+            testing: testing
