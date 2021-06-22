@@ -1,0 +1,13 @@
+---
+- name: Play to create Ec2 resource
+  hosts: localhost
+  vars:
+    aws_region: us-east-1
+  tasks:
+    - name: Task to create the VPC
+      ec2_vpc_net:
+        name: anisble_tower_vpc
+        cidr_block: 10.10.0.0/16
+        region: "{{ aws_region }}"
+        tenancy: default
+      register: anisble_tower_vpc
