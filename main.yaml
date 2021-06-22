@@ -47,3 +47,15 @@
               - 443
             access: Allow
             priority: 102
+
+    - name: Create a network interface using existing security group and public IP
+      azure_rm_networkinterface:
+        name: testlinux-nic
+        resource_group: prod-rg
+        virtual_network: prod-vnet
+        subnet_name: linux-subnet
+        security_group: prod-srg
+        ip_configurations:
+          - name: ipconfig1
+            public_ip_address_name: prod-pip
+            primary: True
