@@ -1,7 +1,6 @@
 ---
-- hosts: all
-  connection: local
-  gather_facts: no
+- name: To create a resource group in azure
+  hosts: localhost
   tasks:
     - name: Create resource group
       azure_rm_resourcegroup:
