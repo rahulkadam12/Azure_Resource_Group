@@ -6,24 +6,17 @@
       azure_rm_resourcegroup:
         name: prod-rg
         location: west europe
-        tags:
-           testing: testing
-
+    
     - name: Create a virtual network
       azure_rm_virtualnetwork:
-      resource_group: prod-rg
+        resource_group: prod-rg
         name: prod-vnet
         address_prefixes_cidr: "10.1.0.0/16"
-        tags:
-           testing: testing
     
     - name: Create a subnet
       azure_rm_subnet:
-      resource_group: prod-rg
-      virtual_network_name: prod-vnet
+        resource_group: prod-rg
+        virtual_network_name: prod-vnet
         name: linux-subnet
         address_prefix_cidr: "10.0.1.0/24"
-   
-   
-
   
