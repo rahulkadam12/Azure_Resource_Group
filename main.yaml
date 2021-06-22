@@ -1,5 +1,5 @@
 ---
-- name: To create a resource group in azure
+- name: To create a  Prod resource group in azure
   hosts: localhost
   tasks:
     - name: Create Production Resource Group
@@ -8,9 +8,11 @@
         location: west europe
    
    
+- name: To create a  Dev resource group in azure
+  hosts: localhost
   tasks:
     - name: Create Dev Resource Group
       azure_rm_resourcegroup:
-        name: dev-rg
+        name: prod-rg
         location: west europe
   
