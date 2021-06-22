@@ -21,7 +21,7 @@
         address_prefix: "10.0.1.0/24"
         name: windows-subnet
         address_prefix: "10.0.2.0/24"
-    virtual_network: prod-vnet
+      virtual_network: prod-vnet
    
    
 
