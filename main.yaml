@@ -65,3 +65,22 @@
         resource_group: prod-rg
         name: prodstorage22062021
         type: Standard_RAGRS
+
+    - name: Create a VM with managed disk
+      azure_rm_virtualmachine:
+        resource_group: prod-rg
+        name: testlinux-vm01
+        admin_username: azadmin
+        admin_password: test@123456
+        vm_size: Standard B2ms
+        network_interface_names: testlinux-nic
+        os_disk_name: testlinux-vm01-osdisk
+        managed_disk_type: Standard_LRS
+        state: present
+        allocated: yes
+        started: yes
+        image:
+          offer: "CentOS-LVM"
+          publisher: "OpenLogic"
+          sku: "7-LVM"
+          version: latest
