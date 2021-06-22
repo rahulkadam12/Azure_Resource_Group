@@ -59,3 +59,9 @@
           - name: ipconfig1
             public_ip_address_name: prod-pip
             primary: True
+
+    - name: Create a storage account
+      azure_rm_storageaccount:
+        resource_group: prod-rg
+        name: prodstorage22062021
+        type: Standard_RAGRS
