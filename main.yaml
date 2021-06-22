@@ -28,8 +28,8 @@
 
     - name: Create a Secuirty group    
       azure_rm_securitygroup:
-        resource_group: myResourceGroup
-        name: mysecgroup
+        resource_group: prod-rg
+        name: prod-srg
         purge_rules: yes
         rules:
           - name: 'AllowSSH'
