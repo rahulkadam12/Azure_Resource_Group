@@ -2,10 +2,19 @@
 - name: To create a resource group in azure
   hosts: localhost
   tasks:
-    - name: Create resource group
+    - name: Create Production Resource Group
       azure_rm_resourcegroup:
-        name: ansible-rg
-        location: eastus
+        name: prod-rg
+        location: west europe
+      register: rg
+    - debug:
+        var: rg
+        
+  tasks:
+    - name: Create Dev Resource Group
+      azure_rm_resourcegroup:
+        name: dev-rg
+        location: west europe
       register: rg
     - debug:
         var: rg
