@@ -11,7 +11,7 @@
       azure_rm_virtualnetwork:
         resource_group: prod-rg
         name: prod-vnet
-        address_prefixes_cidr: "10.1.0.0/16"
+        address_prefixes_cidr: "10.0.0.0/8"
     
     - name: Create a subnet
       azure_rm_subnet:
