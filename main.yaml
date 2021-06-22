@@ -19,4 +19,31 @@
         virtual_network_name: prod-vnet
         name: linux-subnet
         address_prefix_cidr: "10.0.1.0/24"
-  
+    
+    - name: Create a public ip address
+      azure_rm_publicipaddress:
+        resource_group: prod-rg
+        name: prod-pip
+        allocation_method: dynamic
+
+    - name: Create a Secuirty group    
+      azure_rm_securitygroup:
+        resource_group: myResourceGroup
+        name: mysecgroup
+        purge_rules: yes
+        rules:
+          - name: 'AllowSSH'
+            protocol: Tcp
+            source_address_prefix: "*"
+            destination_port_range: 22
+            access: Allow
+            priority: 101
+            direction: Inbound
+          - name: 'Allow-HTTP-HTTPS'
+            protocol: Tcp
+            source_address_prefix: "*"
+            destination_port_range:
+              - 80
+              - 443
+            access: Allow
+            priority: 102
